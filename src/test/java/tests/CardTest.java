@@ -5,7 +5,9 @@ import org.testng.annotations.Test;
 
 public class CardTest  extends BaseTest {
 
-    @Test
+    @Test (priority = 1,
+            testName = "Проверка добавления товара в корзину",
+            description = "Проверка добавления товара в корзину")
     public void checkAddCard() {
         cardPage.open();
         cardPage.login("standard_user","secret_sauce");
@@ -15,7 +17,9 @@ public class CardTest  extends BaseTest {
         cardPage.setNameProducts();
     }
 
-    @Test
+    @Test (priority = 2,
+            testName = "Проверка удаления товара из корзины",
+            description = "Проверка удаления товара из корзины")
     public void checkRemove(){
         cardPage.open();
         cardPage.login("standard_user","secret_sauce");
@@ -27,7 +31,9 @@ public class CardTest  extends BaseTest {
         cardPage.setNameProduct();
     }
 
-    @Test
+    @Test (priority = 4,
+            testName = "Проверка переход на страницу продолжения покупок",
+            description = "Проверка переход на страницу продолжения покупок")
     public void checkContinueShopping(){
         cardPage.open();
         cardPage.login("standard_user","secret_sauce");
@@ -41,7 +47,9 @@ public class CardTest  extends BaseTest {
         cardPage.isPageOpened();
     }
 
-    @Test
+    @Test (priority = 3,
+            testName = "Проверка перехода для оформления заказа",
+            description = "Проверка перехода для оформления заказа")
     public void checkCheckout(){
         cardPage.open();
         cardPage.login("standard_user","secret_sauce");
@@ -52,8 +60,10 @@ public class CardTest  extends BaseTest {
         cardPage.isPageCheckoutOpened();
     }
 
-    @Test
-    public void check() {
+    @Test (priority = 3,
+            testName = "Проверка счетчика товаров в корзине",
+            description = "Проверка счетчика товаров в корзине")
+    public void checkCounterPoducts() {
         cardPage.open();
         cardPage.login("standard_user","secret_sauce");
         cardPage.addProductsToCart();
